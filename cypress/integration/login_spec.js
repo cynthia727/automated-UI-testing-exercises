@@ -18,6 +18,16 @@ describe('login test suite', () => {
 
         cy.get('[data-test=error]').contains('password do not match any user in this service')
         
-    })
+    });
+
+    it('a locked-out account', () => {
+        cy.visit('http://saucedemo.com')
+        cy.get('[data-test=username').type('locked_out_user')
+        cy.get('[data-test=password]').type('secret_sauce')
+        cy.get('[data-test=login-button').click()
+
+        cy.get('[data-test=error]').contains('Sorry, this user has been locked out')
+        
+    });
 })
 
