@@ -3,6 +3,7 @@
    1. Test a successful login
    2. Test a bad password
    3. Test a locked-out account  
+   4. Test a problem account
 ### Tool
 Cypress.
   
